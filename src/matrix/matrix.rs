@@ -14,6 +14,9 @@ pub struct Matrix {
 
 impl Matrix {
     pub fn from(data:Vec<i32>,width:usize,height:usize)->Matrix{
+        if width*height != data.len(){
+            panic!("Error!! Data's dimension does not match shape!!")
+        }
         Matrix {
             values: data,
             height: height,

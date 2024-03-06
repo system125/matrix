@@ -4,7 +4,7 @@ use std::fmt;
 
 impl fmt::Display for Matrix {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f,"Matrix to string")?;
+        writeln!(f,"Matrix to string")?;
 
         for i in self.to_row_iter() {
             for val in i.iter() {
