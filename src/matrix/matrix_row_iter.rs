@@ -28,13 +28,13 @@ impl<'a> Iterator for matrix_row_iter<'a>{
         let curr_row = self.current_row;
         let height = self.matrix.height;
 
-        if (curr_row == self.matrix.height) {
+        if curr_row == self.matrix.height {
             return None
-        }else{
-            self.current_row += 1;
-            let start_indx = curr_row * width;
-            let end_indx = (curr_row + 1) * (width);
-            Some(&self.matrix.values[start_indx..end_indx])
         }
+        
+        self.current_row += 1;
+        let start_indx = curr_row * width;
+        let end_indx = (curr_row + 1) * (width);
+        Some(&self.matrix.values[start_indx..end_indx])
     }
 }
